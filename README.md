@@ -44,15 +44,15 @@ Each row represents a single menu item.
 ```bash
 Zomato-Gen-AI/
 ├── menu/
-│   ├── baap_of_rolls_menu.json
-│   ├── desi_tadka_menu.json
-│   ├── dominos_menu.json
-│   ├── foodbay_menu.json
-│   ├── kfc_menu.json
-│   ├── patiala_lassi_menu.json
-│   ├── pizza_hut_menu.json
-│   ├── prakash_hotel_menu.json
-│   └── waffle_by_nature_menu.json
+│   ├── baap_of_rolls_menu.csv
+│   ├── desi_tadka_menu.csv
+│   ├── dominos_menu.csv
+│   ├── foodbay_menu.csv
+│   ├── kfc_menu.csv
+│   ├── patiala_lassi_menu.csv
+│   ├── pizza_hut_menu.csv
+│   ├── prakash_hotel_menu.csv
+│   └── waffle_by_nature_menu.csv
 ├── README.md
 ├── app.py
 ├── data_cleaning.py
