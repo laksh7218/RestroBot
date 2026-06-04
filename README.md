@@ -36,3 +36,41 @@ conda create -n myenv python=3.10
 conda activate myenv
 pip install -r requirements.txt
 ```
+
+# System Architecture
+```bash
+             +----------------+             +--------------------+             
+             | scraper_runner | --------->  |    scraper.py      |             
+             +----------------+             +--------------------+             
+                                                    |                          
+                                                    v                          
+                                        +------------------------+             
+                                        |   JSON menu files in   |             
+                                        |      /menu folder      |             
+                                        +------------------------+             
+                                                    |                          
+                                                    v                          
+                                        +------------------------+             
+                                        |  data_cleaning.py      |             
+                                        | - Cleaning & formatting|             
+                                        | - Gemini restaurant info|            
+                                        +------------------------+             
+                                                    |                          
+                                                    v                          
+                                        +------------------------+             
+                                        |   rag.py               |             
+                                        | - Embeddings via SBERT |             
+                                        | - FAISS Vector Store   |             
+                                        | - Gemini/LLaMA model   |             
+                                        +------------------------+             
+                                                    |                          
+                                                    v                          
+                                        +------------------------+             
+                                        |  Streamlit App (Local) |             
+                                        | - Hosted in browser    |             
+                                        | - User inputs/query UI |             
+                                        +------------------------+
+```
+
+# Implementation Details & Design Decisions
+
