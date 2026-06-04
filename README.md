@@ -23,3 +23,16 @@ Zomato-Gen-AI/
 ├── requirements.txt
 └── scraper_runner.py
 ```
+
+# Setup
+Config (.env)
+```bash
+hf_token = "YOUR-API-KEY"
+gemini_token = "PUBLIC-API-KEY"
+```
+Environment
+```bash
+conda create -n myenv python=3.10
+conda activate myenv
+pip install -r requirements.txt
+```
