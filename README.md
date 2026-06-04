@@ -78,32 +78,21 @@ pip install -r requirements.txt
 
 # System Architecture
 ```bash
-           User
-  |
-  v
-Streamlit Web App
-  |
-  v
-RAG System (rag.py)
-  |
-  +----> FAISS Database
-  |
-  +----> Gemini / LLaMA
-  |
-  v
-Cleaned Menu Data
-  |
-  v
-data_cleaning.py
-  |
-  v
-JSON Menu Files
-  |
-  v
-scraper.py
-  |
-  v
 Restaurant Websites
+        ↓
+scraper.py
+        ↓
+Menu Data Stored as CSV Files
+        ↓
+data_cleaning.py
+        ↓
+rag.py
+(Embeddings + FAISS + LLM)
+        ↓
+Streamlit Application
+        ↓
+User Query and Response
+
 ```
 
 # Implementation Details & Design Decisions
