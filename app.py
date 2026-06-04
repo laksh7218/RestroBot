@@ -22,7 +22,7 @@ def init_bot():
 docs, index, embedder = init_bot()
 
 # Streamlit UI
-st.title("🍽️ Restaurant Menu Chatbot")
+st.title(" Restaurant Menu Chatbot")
 st.write("Ask a question about the restaurant menus:")
 
 # History as list of (query, response) to preserve order
@@ -44,12 +44,12 @@ if st.button("Ask") and query_input.strip():
 
 # Display last response
 if "last_response" in st.session_state:
-    st.subheader("🤖 Bot Response")
+    st.subheader(" Bot Response")
     st.markdown(st.session_state.last_response)
 
 # Show chat history
 if st.session_state.history:
-    with st.expander("📜 Chat History"):
+    with st.expander(" Chat History"):
         for q, r in reversed(st.session_state.history):
             st.markdown(f"**You:** {q}")
             st.markdown(f"**Bot:** {r}")
