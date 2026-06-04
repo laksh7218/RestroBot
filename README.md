@@ -73,6 +73,17 @@ pip install -r requirements.txt
 ```
 
 # Implementation Details & Design Decisions
-Module: scraper_runner.py
-Acts as the driver script to initiate scraping across multiple Zomato URLs.
-Maps restaurant names to their respective URLs and invokes scrape_zomato() from scraper.py.
+### Module: `scraper_runner.py`
+- Acts as the **driver script** to initiate scraping across multiple Zomato URLs.
+- Maps restaurant names to their respective URLs and invokes `scrape_zomato()` from `scraper.py`.
+
+### Module: `scraper.py`
+Scrapes restaurant information and menu data from a Zomato restaurant page and saves it in structured JSON format.
+- Uses **Selenium WebDriver** (headless Chrome) to render and interact with the dynamic content of Zomato pages.
+- Clicks all "Read more" buttons to expand hidden descriptions.
+- Parses restaurant name, location, contact, menu categories, and items using **BeautifulSoup**.
+- Each menu item includes:
+  - Name, Price, Description
+  - Vegetarian/Non-Vegetarian type
+  - Estimated spice level (based on keywords in description)
+- Automatically saves the scraped data to a JSON file in the `/menu` folder.
