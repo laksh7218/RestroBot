@@ -142,3 +142,25 @@ Serves as the core logic for the restaurant chatbot. It handles embedding genera
 
 - **Chatbot Handler (`chatbot`)**  
   Orchestrates the above steps to serve end-to-end interaction: load → embed → retrieve → respond.
+
+**LLM Notes:**  
+- By default, uses **Gemini-1.5-Pro** via the `google.generativeai` API.
+- A commented-out section supports local **LLaMA models** via `llama_cpp`.
+
+**Returns:**  
+A conversational response and updated query history.
+
+---
+
+
+## Web Interface via Streamlit
+
+A user-friendly web interface was developed using **Streamlit** to make the chatbot accessible and interactive.
+
+### app.py Highlights
+- Uses `streamlit` for a clean UI.
+- Initializes the model and FAISS index on app load using `@st.cache_resource`.
+- Accepts user input via a text box.
+- Retrieves relevant document chunks using FAISS and passes them to the `query_llama` function.
+- Maintains a running history of past queries and responses.
+- Displays the bot's most recent answer and the full conversation history
