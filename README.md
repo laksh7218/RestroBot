@@ -164,3 +164,67 @@ A user-friendly web interface was developed using **Streamlit** to make the chat
 - Retrieves relevant document chunks using FAISS and passes them to the `query_llama` function.
 - Maintains a running history of past queries and responses.
 - Displays the bot's most recent answer and the full conversation history
+
+
+### Features:
+- Lightweight and fast loading with caching.
+- Context-aware follow-up question handling.
+- Integrated Gemini or LLaMA response engine for conversational output.
+
+---
+## Challenges Faced & Solutions
+
+| **Challenge** | **Solution** |
+|---------------|--------------|
+| **Dynamic elements and lazy loading on Zomato pages** | Automated "Read more" button clicks using Selenium with retry loops. |
+| **Text inconsistencies across restaurants (e.g., 'non-veg' vs 'non vegetarian')** | Implemented regex-based synonym replacement to standardize terminology across all entries. |
+| **JSON structure variability across scraped outputs** | Standardized the output schema to separate restaurant metadata and menu items clearly. |
+| **Low accuracy with keyword-only retrieval** | Adopted **semantic retrieval** using SentenceTransformers + FAISS to improve relevance of retrieved content. |
+| **Context length limits in LLM prompts** | Introduced top-k retrieval using FAISS to keep prompts short and focused. |
+| **Poor handling of vague or follow-up queries** | Maintained conversation history and embedded it into prompts for better reference resolution. |
+| **Redundant embedding computation** | Used caching and minimized recomputation by generating all embeddings in advance. |
+| **Inconsistent LLaMA model responses** | Switched to **Gemini** for more reliable and accurate natural language responses. |
+| **Missing restaurant details (like cuisines or timings) in scraped data** | Used **Gemini** to generate enriched metadata through structured prompting. |
+
+
+---
+
+## Future Improvement Opportunities
+
+1. **Persistent Chat History**  
+   Implement a backend database (e.g., SQLite or Firebase) to store user sessions, allowing for persistent chat context across sessions and devices.
+
+2. **User Authentication System**  
+   Add login functionality using `streamlit-authenticator` or OAuth for personalized chat sessions and access control.
+
+3. **UI/UX Enhancements**  
+   Improve the Streamlit interface with:
+   - Accordion-style collapsible restaurant sections
+   - Rich card views for menu items
+   - Sidebar filters (e.g., by cuisine, veg/non-veg, price)
+
+4. **Live Updates from Zomato**  
+   Automate periodic re-scraping of restaurant data to ensure the information remains up-to-date.
+
+5. **Parallel Scraping Engine**  
+   Improve scraping performance with `asyncio`, `aiohttp`, or multi-threading to handle multiple restaurant pages simultaneously.
+
+6. **Multilingual Support**  
+   Use translation APIs or models to support queries in multiple languages for a wider audience.
+
+7. **Query Auto-Suggestions**  
+   Implement real-time search suggestions or autocomplete based on popular queries or restaurant/menu keywords.
+
+8. **Model Switcher for Backend**  
+   Provide an option to dynamically switch between Gemini and local LLaMA models based on user preference or availability.
+
+9. **Feedback Loop and Analytics**  
+   Allow users to rate responses and gather usage analytics to refine prompts, improve model outputs, and optimize FAQ answers.
+
+10. **Mobile Responsiveness**  
+    Enhance the Streamlit app layout for better viewing on smartphones and tablets using custom CSS or responsive layout features.
+
+
+
+
+---
