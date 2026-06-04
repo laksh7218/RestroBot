@@ -78,37 +78,32 @@ pip install -r requirements.txt
 
 # System Architecture
 ```bash
-             +----------------+             +--------------------+             
-             | scraper_runner | --------->  |    scraper.py      |             
-             +----------------+             +--------------------+             
-                                                    |                          
-                                                    v                          
-                                        +------------------------+             
-                                        |   JSON menu files in   |             
-                                        |      /menu folder      |             
-                                        +------------------------+             
-                                                    |                          
-                                                    v                          
-                                        +------------------------+             
-                                        |  data_cleaning.py      |             
-                                        | - Cleaning & formatting|             
-                                        | - Gemini restaurant info|            
-                                        +------------------------+             
-                                                    |                          
-                                                    v                          
-                                        +------------------------+             
-                                        |   rag.py               |             
-                                        | - Embeddings via SBERT |             
-                                        | - FAISS Vector Store   |             
-                                        | - Gemini/LLaMA model   |             
-                                        +------------------------+             
-                                                    |                          
-                                                    v                          
-                                        +------------------------+             
-                                        |  Streamlit App (Local) |             
-                                        | - Hosted in browser    |             
-                                        | - User inputs/query UI |             
-                                        +------------------------+
+           User
+  |
+  v
+Streamlit Web App
+  |
+  v
+RAG System (rag.py)
+  |
+  +----> FAISS Database
+  |
+  +----> Gemini / LLaMA
+  |
+  v
+Cleaned Menu Data
+  |
+  v
+data_cleaning.py
+  |
+  v
+JSON Menu Files
+  |
+  v
+scraper.py
+  |
+  v
+Restaurant Websites
 ```
 
 # Implementation Details & Design Decisions
