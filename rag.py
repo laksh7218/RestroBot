@@ -1,12 +1,3 @@
-"""
-Restaurant Menu Chatbot System
-
-This module implements a chatbot system that answers queries about restaurant menus
-using vector similarity search with FAISS and generative AI models. The system loads
-restaurant menu data, embeds it using sentence transformers, and retrieves relevant
-information to answer user queries.
-"""
-
 import os
 import faiss
 import requests
