@@ -1,6 +1,72 @@
 # RestroBot
 A powerful, AI-driven assistant specialized in restaurant information and menu queries. Leveraging advanced natural language processing capabilities, it provides users with accurate and concise responses about various restaurants, their menus, pricing, and locations.
 
+# Roorkee Restaurant Menu Dataset
+
+## Overview
+
+This dataset contains menu information collected from multiple restaurants operating in Roorkee, Uttarakhand, India. The data has been consolidated into a single structured CSV file to support applications such as restaurant analytics, menu recommendation systems, food-ordering platforms, data visualization, and machine learning projects.
+
+The dataset includes menu items from restaurants such as:
+
+- Desi Tadka
+- KFC
+- Pizza Hut
+- Domino's Pizza
+- Baap of Rolls
+- Hotel Prakash
+- Foodbay
+- Waffle by Nature
+- Patiala Lassi
+
+## Dataset Structure
+
+Each row represents a single menu item.
+
+| Column Name | Description |
+|-------------|-------------|
+| restaurant_name | Name of the restaurant offering the item |
+| category | Menu category assigned by the restaurant |
+| raw_item | Original menu item name extracted from the source |
+| price | Item price in Indian Rupees (INR) |
+| type | Food type (Veg, Non-Veg, Unknown) |
+| spice_level | Spice level specified in the source data |
+
+## Example
+
+| restaurant_name | category | raw_item | price | type | spice_level |
+|----------------|----------|----------|--------|------|-------------|
+| Desi Tadka | Main Course | Shahi Paneer | 280 | Veg | Normal |
+| Desi Tadka | Breads | Garlic Naan | 68 | Veg | Normal |
+| KFC | Burgers | Chicken Zinger Burger | 199 | Non-Veg | Normal |
+
+## Use Cases
+
+- Restaurant menu analysis
+- Food recommendation systems
+- Price comparison studies
+- Restaurant search and filtering
+- Machine learning classification tasks
+- Data visualization dashboards
+- NLP and menu-item categorization research
+
+## Notes
+
+- Prices are represented in Indian Rupees (INR).
+- Menu item names are stored in their original form as extracted from the source.
+- Categories and spice levels are preserved from the original restaurant menus.
+- Some records may contain inconsistencies, abbreviations, or restaurant-specific naming conventions due to source formatting.
+
+## Dataset Statistics
+
+- Total Records: 1,384
+- Number of Restaurants: 9
+- Features: 6
+- Format: CSV / XLSX
+
+## License
+
+This dataset is provided for educational, research, and non-commercial purposes. Users should verify restaurant information before using it in production systems.
 # Directory Structure
 ```bash
 Zomato-Gen-AI/
