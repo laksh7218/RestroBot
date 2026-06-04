@@ -7,8 +7,7 @@ A powerful, AI-driven assistant specialized in restaurant information and menu q
 
 This dataset contains menu information collected from multiple restaurants operating in Roorkee, Uttarakhand, India.
 
-The dataset includes menu items from restaurants such as:
-
+The dataset includes menu items from 9 restaurants which are as follows:
 - Desi Tadka
 - KFC
 - Pizza Hut
@@ -19,10 +18,7 @@ The dataset includes menu items from restaurants such as:
 - Waffle by Nature
 - Patiala Lassi
 
-
-- Total Records: 1,384
-- Number of Restaurants: 9
-- Features: 6
+The datset has 1384 rows and 6 featues 
 
 ### Note: The pipeline stores restaurant data in JSON format internally. For analysis and sharing, the final dataset is provided in CSV format.
 
