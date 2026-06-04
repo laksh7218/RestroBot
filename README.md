@@ -32,7 +32,7 @@ Each row represents a single menu item.
 | Food Type | Food type (Veg, Non-Veg, Unknown) |
 | Spice Level | Spice level specified in the source data |
 
-
+## Note: The pipeline stores restaurant data in JSON format internally. For analysis and sharing, the final dataset is provided in CSV format.
 
 ## Dataset Statistics
 
@@ -82,12 +82,15 @@ Restaurant Websites
         ↓
 scraper.py
         ↓
-Menu Data Stored as CSV Files
+JSON Menu Files
         ↓
 data_cleaning.py
         ↓
+database.csv
+(Processed Dataset)
+        ↓
 rag.py
-(Embeddings + FAISS + LLM)
+(Embeddings + FAISS + Gemini)
         ↓
 Streamlit Application
         ↓
