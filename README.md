@@ -73,4 +73,6 @@ pip install -r requirements.txt
 ```
 
 # Implementation Details & Design Decisions
-
+Module: scraper_runner.py
+Acts as the driver script to initiate scraping across multiple Zomato URLs.
+Maps restaurant names to their respective URLs and invokes scrape_zomato() from scraper.py.
