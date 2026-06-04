@@ -113,3 +113,32 @@ This module processes raw restaurant menu data extracted from Zomato (stored in 
     - Operational hours
   - Combines this info with detailed item data (category, item name, description, price, veg/non-veg, spice level).
   - Outputs a flat list of all text chunks and saves them to `database.csv`.
+  
+**Returns:**  
+A list of cleaned and enriched text strings describing restaurants and their menu items, suitable for use in retrieval-based systems.
+
+### Module: `rag.py`
+
+**Purpose:**  
+Serves as the core logic for the restaurant chatbot. It handles embedding generation, similarity-based document retrieval, and response generation using an LLM (either Gemini or LLaMA).
+
+ **Key Components:**
+
+- **Data Loading (`load_data_from_json`)**  
+  Calls the `load_and_clean_menus_from_json()` from `data_cleaning.py` to obtain processed restaurant/menu text data.
+
+- **Embedding + Indexing (`build_faiss`)**  
+  - Generates sentence embeddings using SentenceTransformers (`all-MiniLM-L6-v2`).
+  - Constructs a **FAISS** index for fast vector similarity search.
+
+- **Query Retrieval (`retrieve`)**  
+  - Encodes the user query and searches the FAISS index.
+  - Returns the top-k most relevant documents as context.
+
+- **Response Generation (`query_llama`)**  
+  - Builds a structured prompt using the current query, retrieved context, and previous chat history.
+  - Calls Gemini (or optionally LLaMA) to generate a concise and contextually-aware answer.
+  - Maintains conversation history for reference in follow-up queries.
+
+- **Chatbot Handler (`chatbot`)**  
+  Orchestrates the above steps to serve end-to-end interaction: load → embed → retrieve → respond.
